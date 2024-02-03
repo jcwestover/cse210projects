@@ -34,18 +34,14 @@ class Program
                             
                             break;
                         case "2":
-                            foreach (Entry singleEntry in journal._entries)
-                            {
-                                Console.WriteLine(singleEntry._entryDate);
-                                Console.WriteLine(singleEntry._prompts);
-                                Console.WriteLine(singleEntry._response);
-                            }
+                            journal.Display();
                             break;
                         case "3":
-                            Console.WriteLine("Load");
+                            journal.Load();
                             break;
                         case "4":
-                            Console.WriteLine("Save");
+                            Console.WriteLine("Saving file...");
+                            journal.Save();
                             break;
                         case "5":
                             Console.WriteLine("Quit");
