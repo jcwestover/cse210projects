@@ -17,6 +17,34 @@ class Program
         Console.Write("Text of the scripture: ");
         string scripture = Console.ReadLine();
 
+        Scripture scripture = new Scripture(book, chapter, startVerse, endingVerse);
+        
+        console.Clear();
+
+        scripture.Display();
+
+        Console.WriteLine("Press Enter to hide words.\nType 'quit' to exit the program.");
+
+        while(true)
+        {
+            string userSelection = Console.ReadLine();
+
+            if (userSelection == 'quit')
+            {
+                break;
+            }
+
+            if (!scripture.HideWords())
+            {
+                Console.WriteLine("All words have been hidden.");
+                break;
+            }
+
+            Console.Clear();
+            scripture.Display();
+            Console.WriteLine("Press Enter to continue hiding words.\nType 'quit' to exit the program.");
+        }
+
         
     }
 }
