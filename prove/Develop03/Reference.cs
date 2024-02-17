@@ -26,7 +26,7 @@ class Reference
             if (_endVerse == "0")
                 return $"{_book} {_chapter}:{_startVerse}";
             else
-                return $"{_book} {_chapter}:{_startVerse} - {_endVerse}"; 
+                return $"{_book} {_chapter}:{_startVerse}-{_endVerse}"; 
 
         }
     }
