@@ -24,7 +24,7 @@ public class Scripture
         {
             if (word.isHidden())
             {
-                Console.Write(new string("_", word.GetText().Length) + " ");
+                Console.Write(new string('_', word.GetText().Length) + " ");
             }
             else
             {
