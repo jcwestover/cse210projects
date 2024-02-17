@@ -7,7 +7,7 @@ public class Scripture
 
     public Scripture(string book, string chapter, string verse, string endVerse, string text)
     {
-        _reference = new Reference(book, chapter, verse);
+        _reference = new Reference(book, chapter, verse, endVerse);
         _words = new List<Word>();
 
         string[] splitText = text.Split(' ');
@@ -20,7 +20,7 @@ public class Scripture
 
     public void Display()
     {
-        Console.WriteLine($"{_reference}:\n");
+        Console.WriteLine($"{_reference.GetReference()}");
         
         foreach (Word word in _words)
         {

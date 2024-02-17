@@ -42,7 +42,7 @@ class Program
 
             Console.Clear();
             scripture.Display();
-            Console.WriteLine("Press Enter to continue hiding words.\nType 'quit' to exit the program.");
+            Console.WriteLine("\nPress Enter to continue hiding words.\nType 'quit' to exit the program.");
         }
 
         
