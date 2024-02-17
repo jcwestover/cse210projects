@@ -15,21 +15,21 @@ class Program
         Console.Write("Ending verse number (if only one verse enter 0): ");
         string endingVerse = Console.ReadLine();
         Console.Write("Text of the scripture: ");
-        string scripture = Console.ReadLine();
+        string scripture_text = Console.ReadLine();
 
-        Scripture scripture = new Scripture(book, chapter, startVerse, endingVerse);
+        Scripture scripture = new Scripture(book, chapter, startVerse, endingVerse, scripture_text);
         
-        console.Clear();
+        Console.Clear();
 
         scripture.Display();
 
-        Console.WriteLine("Press Enter to hide words.\nType 'quit' to exit the program.");
+        Console.WriteLine("\nPress Enter to hide words.\nType 'quit' to exit the program.");
 
         while(true)
         {
             string userSelection = Console.ReadLine();
 
-            if (userSelection == 'quit')
+            if (userSelection == "quit")
             {
                 break;
             }
