@@ -1,3 +1,5 @@
+using System;
+
 public class Scripture
 {
     private Reference _reference;
@@ -33,17 +35,38 @@ public class Scripture
         }
     }
 
-    // public bool HideWords()
-    // {
-    //     List<_words> visibleWords = GetVisibleWords();
+    public bool HideWords()
+    {
+        List<Word> visibleWords = GetVisibleWords();
         
-    //     if (visibleWords.Count < 2)
-    //         return false
+        if (visibleWords.Count < 2)
+             return false;
         
-    //     Random random = new Random();
-    //     int randomIndex1 = random.Next(visibleWords.Count);
-    //     int randomIndex2;
+        Random random = new Random();
+         int randomIndex1 = random.Next(visibleWords.Count);
+         int randomIndex2;
 
-    //     // need some sort of loop here....
-    // }
+        do
+        {
+            randomIndex2 = random.Next(visibleWords.Count);
+        }
+
+        while (randomIndex1 == randomIndex2);
+
+        visibleWords[randomIndex1].Hide();
+        visibleWords[randomIndex2].Hide();
+        return true;
+    }
+
+    private List<Word> GetVisibleWords()
+    {
+        List<Word> visibleWords = new List<Word>();
+        foreach (Word word in _words)
+        {
+            if (!word.isHidden())
+                visibleWords.Add(word);
+        }
+        return visibleWords;
+    }
+
 }
