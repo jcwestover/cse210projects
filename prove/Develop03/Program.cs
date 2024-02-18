@@ -4,7 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // ignore this as of now******
         Console.WriteLine("Please enter some information about the Scripture you would like to memorize.");
         Console.Write("Name of Book: ");
         string book = Console.ReadLine();
