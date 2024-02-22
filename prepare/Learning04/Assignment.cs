@@ -21,7 +21,7 @@ public class Assignment
 
     public string GetSummary()
     {
-        return $"{GetStudentName()} - {GetTopic()}";
+        return $"{_studentName} - {_topic}";
     }
 
 }

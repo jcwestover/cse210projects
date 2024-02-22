@@ -15,14 +15,14 @@ public class MathAssignment : Assignment
         return _textbookSection;
     }
 
-    public string GetTopic()
+    public string GetProblems()
     {
-        return _topic;
+        return _problems;
     }
 
     public string GetHomeworkList()
     {
-        return $"{GetSummary()\n Section {_textbookSection}};"
+        return $"Section {_textbookSection} Problems {_problems}";
     }
 
 }
