@@ -4,8 +4,14 @@ public class Activity
     private string _name;
     private string[] _spinnerList = new string []
     {
-        "\\", "|", "/","-"
+        "\\", "|", "/", "-"
     };
+
+    public Activity(int length, string name)
+    {
+        _length = length;
+        _name = name;
+    }
 
     public string BeginningMessage()
     {
@@ -31,17 +37,27 @@ public class Activity
             {
                 i = 0;
             }
-            
+
         }
 
         s.Stop();
     }
 
-     public string EndingMessage()
-     {
-        Console.WriteLine($"Well done!")
+    public string GetReady()
+    {
+        Console.WriteLine("Get Ready...")
+    }
 
-     }
+    public string EndingMessage()
+    {
+       Console.WriteLine($"Well done!");
+       Spinner();
+       Console.WriteLine($"You have completed {_length} of The {_name}");
+    }
+
+
+
+
 
 
 }
