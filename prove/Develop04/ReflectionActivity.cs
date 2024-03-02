@@ -2,6 +2,7 @@ using System;
 public class ReflectionActivity : Activity
 {
     private string _refectionDesc = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+    
     private string[] _prompts = new string []
     {
         "Think of a time when you stood up for someone else.",
@@ -9,6 +10,7 @@ public class ReflectionActivity : Activity
         "Think of a time when you helped someone in need.",
         "Think of a time when you did something truly selfless."
     };
+    
     private string[] _reflectQs = new string []
     {
         "Why was this experience meaningful to you?",
@@ -27,11 +29,29 @@ public class ReflectionActivity : Activity
 
     }
 
+    public void DisplayDesc()
+    {
+        Console.WriteLine(_refectionDesc + "\n");
+    }
+
     public void PromptGenerator()
     {
         Random random = new Random();
         int index = random.Next(_prompts.Length);
-        Console.WriteLine(_prompts[index]);
+        Console.WriteLine("Consider the following prompt:\n \n---" + _prompts[index] + "---\n");
+        Console.Write("When you have something in mind, press enter to continue.");
+        Console.ReadLine();
+        Console.WriteLine("\nNow ponder on each of the following questions as they relate to this experience.");
+
+        Console.Write($"You may begin in: ");
+
+        for(int i = 5; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+
+        }
     }
 
     public void QuestionIterator()
@@ -41,7 +61,7 @@ public class ReflectionActivity : Activity
 
         for (int i = 0; i < _reflectQs.Length && s.Elapsed < TimeSpan.FromSeconds(_length); i++)
         {
-            Console.WriteLine(_reflectQs[i]);
+            Console.WriteLine("\n" + _reflectQs[i]);
             Spinner();
         }
     }

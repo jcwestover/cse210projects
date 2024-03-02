@@ -21,20 +21,34 @@ class Program
                     case "2":
                         // reflection activity
                         Console.Write("How long, in seconds, would you like for your session?");
-                        int length = Convert.ToInt32(Console.ReadLine());
-                        
-                        ReflectionActivity reflectionActivity = new ReflectionActivity(length, "Reflection Activity");
+                        int refLength = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n");
+                        ReflectionActivity reflectionActivity = new ReflectionActivity(refLength, "Reflection Activity");
 
                         reflectionActivity.BeginningMessage();
-                        reflectionActivity.PromptGenerator();
+                        reflectionActivity.DisplayDesc();
                         reflectionActivity.Spinner();
                         reflectionActivity.GetReady();
-                        reflectionActivity.Spinner();
+                        reflectionActivity.PromptGenerator();
+                        
                         reflectionActivity.QuestionIterator();
+                        reflectionActivity.EndingMessage();
 
                         break;
                     case "3":
                         // listing activity
+                        Console.Write("How long, in seconds, would you like for your session?");
+                        int listLength = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n");
+                        ListingActivity listingActivity = new ListingActivity(listLength, "Listing Activity");
+
+                        listingActivity.BeginningMessage();
+                        listingActivity.DisplayDesc();
+                        listingActivity.Spinner();
+                        listingActivity.GetReady();
+                        listingActivity.ListingPromptGenerator();
+                        listingActivity.List();
+                        listingActivity.EndingMessage();
 
                         break;
                     case "4":

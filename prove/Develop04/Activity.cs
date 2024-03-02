@@ -26,7 +26,7 @@ public class Activity
 
     public void BeginningMessage()
     {
-        Console.WriteLine($"Welcome to the {_name}.");
+        Console.WriteLine($"Welcome to the {_name}.\n");
     }
 
     public void Spinner()
@@ -35,7 +35,7 @@ public class Activity
 
         System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
         s.Start();
-        while (s.Elapsed < TimeSpan.FromSeconds(7)) 
+        while (s.Elapsed < TimeSpan.FromSeconds(5)) 
         {            
             string line = _spinnerList[i];
             Console.Write(line);
@@ -61,11 +61,20 @@ public class Activity
 
     public void EndingMessage()
     {
-       Console.WriteLine($"Well done!");
+       Console.WriteLine($"Well done!\n");
        Spinner();
-       Console.WriteLine($"You have completed {_length} of The {_name}");
+       Console.WriteLine($"You have completed {_length} seconds of The {_name}");
+       Spinner();
     }
 
+    public static void ClearCurrentConsoleLine()
+    {
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, Console.CursorTop);
+        Console.Write(new string(' ', Console.BufferWidth)); 
+        Console.SetCursorPosition(0, currentLineCursor);
+    }
+    
 
 
 
