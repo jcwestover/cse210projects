@@ -1,6 +1,7 @@
+using System;
 public class Activity
 {
-    private int _length;
+    protected int _length;
     private string _name;
     private string[] _spinnerList = new string []
     {
@@ -13,18 +14,28 @@ public class Activity
         _name = name;
     }
 
-    public string BeginningMessage()
+    public int GetLength()
+    {
+        return _length;
+    }
+
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public void BeginningMessage()
     {
         Console.WriteLine($"Welcome to the {_name}.");
     }
 
-    public string Spinner()
+    public void Spinner()
     {   
         int i = 0;
 
         System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
         s.Start();
-        while (s.Elapsed < TimeSpan.FromSeconds(2)) 
+        while (s.Elapsed < TimeSpan.FromSeconds(7)) 
         {            
             string line = _spinnerList[i];
             Console.Write(line);
@@ -43,12 +54,12 @@ public class Activity
         s.Stop();
     }
 
-    public string GetReady()
+    public void GetReady()
     {
-        Console.WriteLine("Get Ready...")
+        Console.WriteLine("Get Ready...");
     }
 
-    public string EndingMessage()
+    public void EndingMessage()
     {
        Console.WriteLine($"Well done!");
        Spinner();

@@ -20,6 +20,17 @@ class Program
                         break;
                     case "2":
                         // reflection activity
+                        Console.Write("How long, in seconds, would you like for your session?");
+                        int length = Convert.ToInt32(Console.ReadLine());
+                        
+                        ReflectionActivity reflectionActivity = new ReflectionActivity(length, "Reflection Activity");
+
+                        reflectionActivity.BeginningMessage();
+                        reflectionActivity.PromptGenerator();
+                        reflectionActivity.Spinner();
+                        reflectionActivity.GetReady();
+                        reflectionActivity.Spinner();
+                        reflectionActivity.QuestionIterator();
 
                         break;
                     case "3":

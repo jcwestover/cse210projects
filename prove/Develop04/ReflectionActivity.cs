@@ -1,3 +1,4 @@
+using System;
 public class ReflectionActivity : Activity
 {
     private string _refectionDesc = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
@@ -7,7 +8,7 @@ public class ReflectionActivity : Activity
         "Think of a time when you did something really difficult.",
         "Think of a time when you helped someone in need.",
         "Think of a time when you did something truly selfless."
-    }
+    };
     private string[] _reflectQs = new string []
     {
         "Why was this experience meaningful to you?",
@@ -19,23 +20,31 @@ public class ReflectionActivity : Activity
         "What could you learn from this experience that applies to other situations?",
         "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?"
-    }
+    };
 
     public ReflectionActivity(int length, string name) : base(length, name)
     {
 
     }
 
-    public string PromptGenerator()
+    public void PromptGenerator()
     {
         Random random = new Random();
         int index = random.Next(_prompts.Length);
-        return _prompts[index];
+        Console.WriteLine(_prompts[index]);
     }
 
-    public string QuestionIterator()
+    public void QuestionIterator()
     {
-        
+        System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
+        s.Start();
+
+        for (int i = 0; i < _reflectQs.Length && s.Elapsed < TimeSpan.FromSeconds(_length); i++)
+        {
+            Console.WriteLine(_reflectQs[i]);
+            Spinner();
+        }
     }
+    
 
 }
