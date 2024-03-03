@@ -8,30 +8,43 @@ public class BreathingActivity : Activity
 
     }
 
+    public void DisplayDesc()
+    {
+        Console.WriteLine(_breathingDesc + "\n");
+    }
+
     public void Pacer()
     {
+        Console.Write("\nPress enter when ready to begin");
+        Console.ReadLine();
+        Console.Clear();
+
         System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
         s.Start();
 
-        for (int i = 0; i < _reflectQs.Length && s.Elapsed < TimeSpan.FromSeconds(_length); i++)
+        for (int i = 0; s.Elapsed < TimeSpan.FromSeconds(_length); i++)
         {
             Console.Write("Breathe in...");
-            for(int i = 4; i > 0; i--)
+            for(int j = 4; j > 0; j--)
             {
-                Console.Write(i);
+                Console.Write(j);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
 
             }
 
+            Console.Clear();
+            
             Console.Write("Now breathe out...");
-            for(int i = 6; i > 0; i--)
+            for(int k = 6; k > 0; k--)
             {
-                Console.Write(i);
+                Console.Write(k);
                 Thread.Sleep(1000);
                 Console.Write("\b \b");
 
             }
+
+            Console.Clear();
         }
 
     }

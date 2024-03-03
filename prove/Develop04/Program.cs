@@ -16,11 +16,23 @@ class Program
                 {
                     case "1":
                         // breathing exercise
+                        Console.Write("How long, in seconds, would you like for your session? ");
+                        int breLength = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n");
+                        BreathingActivity breathingActivity = new BreathingActivity(breLength, "Breathing Activity");
+
+                        breathingActivity.BeginningMessage();
+                        breathingActivity.DisplayDesc();
+                        breathingActivity.Spinner();
+                        breathingActivity.GetReady();
+                        breathingActivity.Spinner();
+                        breathingActivity.Pacer();
+                        breathingActivity.EndingMessage();
 
                         break;
                     case "2":
                         // reflection activity
-                        Console.Write("How long, in seconds, would you like for your session?");
+                        Console.Write("How long, in seconds, would you like for your session? ");
                         int refLength = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("\n");
                         ReflectionActivity reflectionActivity = new ReflectionActivity(refLength, "Reflection Activity");
@@ -37,7 +49,7 @@ class Program
                         break;
                     case "3":
                         // listing activity
-                        Console.Write("How long, in seconds, would you like for your session?");
+                        Console.Write("How long, in seconds, would you like for your session? ");
                         int listLength = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("\n");
                         ListingActivity listingActivity = new ListingActivity(listLength, "Listing Activity");
