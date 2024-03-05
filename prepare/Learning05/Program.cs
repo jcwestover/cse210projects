@@ -18,5 +18,10 @@ class Program
 
         Console.WriteLine(myRec.Color);
         Console.WriteLine(myRec.GetArea());
+
+        Circle myCir = new Circle("Purple", 5);
+
+        Console.WriteLine(myCir.Color);
+        Console.WriteLine(myCir.GetArea());
     }
 }
