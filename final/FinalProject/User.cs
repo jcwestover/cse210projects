@@ -1,7 +1,7 @@
 public class User
 {
     private int _age;
-    private int _weight;
+    private float _weight;
     private int _height;
     private int _activityLevel;
 
@@ -11,7 +11,7 @@ public class User
         set { _age = value; }
     }
 
-    public int Weight
+    public float Weight
     {
         get { return _weight; }
         set { _weight = value; }
