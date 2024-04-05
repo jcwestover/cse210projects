@@ -6,4 +6,9 @@ public class WeightTracker
     {
         _weights.Add(weight);
     }
+
+    public double GetLastWeight(List<double> _weights)
+    {
+        return _weights.Count -1;
+    }
 }

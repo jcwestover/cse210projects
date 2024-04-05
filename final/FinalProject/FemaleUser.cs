@@ -1,9 +1,17 @@
 public class FemaleUser : User
 {
-    public override double TdeeCalc()
+    public FemaleUser(int age, float weight, int height, int activityLevel, string gender)
     {
-        // Will return  the Tdee of the MaleUser. *the calculations will be slightly different between males and females*
+        Age = age;
+        Weight = weight;
+        Height = height;
+        ActivityLevel = activityLevel;
+        Gender = gender;
+    }
+    public override double TdeeCalc(int age, float weight, int height, int activityLevel)
+    {
+        double tdee = Math.Floor(387 - 7.31 * age + _actDic[activityLevel] * (10.9 * (weight / 2.205) + 660.7 * (height / 39.37)));
 
-        return 2;
+        return tdee;
     }
 }
