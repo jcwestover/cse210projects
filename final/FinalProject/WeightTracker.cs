@@ -1,14 +1,20 @@
 public class WeightTracker
 {
-    private List<double> _weights;
+    private List<float> _weights;
 
-    public void AddWeight(double weight)
+    public WeightTracker()
+    {
+        _weights = new List<float>();
+    }
+
+    public void AddWeight(float weight)
     {
         _weights.Add(weight);
     }
 
-    public double GetLastWeight(List<double> _weights)
+    public float GetLastWeight()
     {
-        return _weights.Count -1;
+        // Return the last weight added to the _weights list
+        return _weights[_weights.Count - 1];
     }
 }

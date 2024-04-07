@@ -53,8 +53,8 @@ public class User
 
     public (double, double, double) MacroCalc(double weight, double tdee)
     {
-        double protein = weight * 1.25;
-        double fat = weight * 0.5;
+        double protein = Math.Floor(weight * 1.25);
+        double fat = Math.Floor(weight * 0.5);
         double remainingCals = tdee - ((protein * 4) + (fat * 9));
         double carbs =  Math.Floor(remainingCals / 4);
 
